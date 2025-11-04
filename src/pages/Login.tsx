@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import "./Login.css"; 
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
 import { LuCamera, LuEye, LuEyeOff } from "react-icons/lu";
 import { LoginHook } from "../hooks/LoginHook";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const { email, password, setEmail, setPassword, handleLogin } = LoginHook();
-
-  // Estado para mostrar/ocultar la contraseña
   const [showPassword, setShowPassword] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const success = await handleLogin(e); 
+    if (success) {
+      navigate("/home"); 
+    }
+  };
 
   return (
     <div className="login-page">
@@ -26,7 +35,7 @@ const Login: React.FC = () => {
               </p>
             </div>
 
-            <form className="form-card__form" onSubmit={handleLogin}>
+            <form className="form-card__form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
