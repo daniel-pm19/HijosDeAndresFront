@@ -1,0 +1,210 @@
+
+:root {
+  --color-primary: #136dec;
+  --color-background-dark: #101822;
+  --color-card-dark: #111822; 
+  --color-input-dark: #192433; 
+  --color-border-dark: #324867;
+  --color-text-light: #ffffff;
+  --color-text-medium: #92a9c9;
+}
+
+/* --- 2. Estructura de la Página --- */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  
+}
+
+.login-container {
+  width: 100%;
+  max-width: 448px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; /* 12px */
+  margin-bottom: 0.5rem; 
+}
+
+.login-header h1 {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.header-icon {
+  color: var(--color-primary);
+}
+
+/* --- 3. Tarjeta del Formulario --- */
+.form-card {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 0.75rem; /* 12px */
+  padding: 2rem; /* 32px */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.form-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px */
+}
+
+.form-card__header {
+  text-align: center;
+  
+  padding-bottom: 0.5rem; 
+}
+
+.form-card__header h2 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.form-card__subtitle {
+  font-size: 0.875rem; /* 14px */
+  color: var(--color-text-medium);
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+/* --- 4. Grupos del Formulario --- */
+.form-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text-light);
+  margin: 0; 
+}
+
+/* Contenedor para "Password" y "Forgot Password?" */
+.form-group__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.form-group__header a {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.form-group__header a:hover {
+  text-decoration: none;
+}
+
+
+/* --- 5. Inputs y Botones (Estilos Reutilizados) --- */
+.form-input {
+  width: 100%;
+  height: 3rem; /* 48px */
+  padding: 0 1rem; /* 16px */
+  box-sizing: border-box;
+  
+  /* Color de fondo específico para esta pantalla */
+  background-color: var(--color-input-dark); 
+  border: 1px solid var(--color-border-dark);
+  border-radius: 0.5rem; /* 8px */
+  
+  color: var(--color-text-light);
+  font-size: 0.875rem; /* 14px */
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.form-input::placeholder {
+  color: var(--color-text-medium);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(19, 109, 236, 0.5);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper .form-input {
+  padding-right: 3rem;
+}
+
+.password-icon {
+  position: absolute;
+  right: 1rem; /* 16px */
+  color: var(--color-text-medium);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.form-button {
+  height: 3rem; /* 48px */
+  margin-top: 1rem; 
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 600; 
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form-button:hover {
+  background-color: #105cc8;
+}
+
+/* --- 6. Links de Ayuda y Footer (Reutilizado) --- */
+.helper-link {
+  font-size: 0.875rem; /* 14px */
+  color: var(--color-text-medium);
+  text-align: center;
+  margin: 0;
+  padding-top: 0.5rem; 
+}
+
+.helper-link a {
+  color: var(--color-primary);
+  font-weight: 600; 
+  text-decoration: underline;
+}
+
+.helper-link a:hover {
+  text-decoration: none;
+}
