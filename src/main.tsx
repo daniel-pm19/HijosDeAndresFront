@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Home from './pages/Home/Home'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/register", 
     element: <Register />,
   },
+  {
+    path: "/home",
+    element: <Home />
+  }
 ]);
 
 // 4. Renderiza el Router
