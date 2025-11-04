@@ -21,7 +21,6 @@ const Login: React.FC = () => {
             <div className="form-card__header">
               <h2>Welcome Back</h2>
               <p className="form-card__subtitle">
-                Enter your credentials to access your account.
               </p>
             </div>
 
