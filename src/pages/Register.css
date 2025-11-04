@@ -1,0 +1,198 @@
+/* --- 1. Configuración Global e Importación de Fuentes --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+/* Definición de colores como variables CSS para fácil mantenimiento */
+:root {
+  --color-primary: #136dec;
+  --color-background-dark: #101822;
+  --color-card-dark: #192433;
+  --color-input-dark: #111822;
+  --color-border-dark: #324867;
+  --color-text-light: #ffffff;
+  --color-text-medium: #92a9c9; 
+  --color-text-dark: #101822; 
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  min-height: 100vh;
+}
+
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box; 
+}
+
+.register-container {
+  width: 100%;
+  max-width: 448px; 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+}
+
+.register-header {
+  text-align: center;
+}
+
+.register-header h1 {
+  font-size: 2rem; 
+  font-weight: 800;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+
+.form-card {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 0.75rem;
+  padding: 2rem; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.form-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+}
+
+.form-card__header {
+  text-align: center;
+}
+
+.form-card__header h2 {
+  font-size: 1.5rem; 
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* --- 4. Grupos del Formulario (Label + Input) --- */
+.form-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px - Espacio entre label e input */
+}
+
+.form-group label {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+
+
+.form-input {
+  width: 100%;
+  height: 3.5rem; /* 56px */
+  padding: 0 0.875rem; /* 14px */
+  box-sizing: border-box; 
+  
+  background-color: var(--color-input-dark);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 0.5rem; /* 8px */
+  
+  color: var(--color-text-light);
+  font-size: 1rem; /* 16px */
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.form-input::placeholder {
+  color: var(--color-text-medium);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(19, 109, 236, 0.5); /* Anillo de foco */
+}
+
+/* Contenedor para el input de contraseña y el ícono */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper .form-input {
+  padding-right: 3rem; /* Espacio para el ícono */
+}
+
+.password-icon {
+  position: absolute;
+  right: 0.875rem; /* 14px */
+  color: var(--color-text-medium);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.form-button {
+  height: 3rem; /* 48px */
+  padding: 0 1.25rem; /* 20px */
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form-button:hover {
+  background-color: #105cc8; /* Un tono más oscuro de azul primario */
+}
+
+/* --- 6. Links de Ayuda y Footer --- */
+.helper-link {
+  font-size: 0.875rem; /* 14px */
+  color: var(--color-text-medium);
+  text-align: center;
+  margin: 0;
+}
+
+.helper-link a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.helper-link a:hover {
+  text-decoration: underline;
+}
+
+.register-footer {
+  text-align: center;
+  font-size: 0.75rem; /* 12px */
+  color: var(--color-text-medium);
+}
+
+.register-footer a {
+  color: var(--color-text-medium);
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
