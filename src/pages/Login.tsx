@@ -1,53 +1,13 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
 import "./Login.css"; 
-import { LuCamera, LuEye } from "react-icons/lu";
+import { LuCamera, LuEye, LuEyeOff } from "react-icons/lu";
+import { LoginHook } from "../hooks/LoginHook";
 
 const Login: React.FC = () => {
+  const { email, password, setEmail, setPassword, handleLogin } = LoginHook();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const navigate = useNavigate();
-
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); 
-    setError(""); 
-
-    try {
-      
-      const response = await axios.post("http://localhost:8080/auth/login", {
-        email: email,
-        password: password,
-      });
-
-      
-      console.log("Inicio de sesión exitoso:", response.data);
-
-      
-      const token = response.data.token;       
-      if (token) {
-        localStorage.setItem("authToken", token);
-      
-   
-        navigate("/dashboard"); 
-      } else {
-        setError("No se recibió token del servidor");
-      }
-
-    } catch (err) {
-      console.error("Error en el inicio de sesión:", err);
-      if (axios.isAxiosError(err) && err.response) {
-     
-        setError(err.response.data.message || "Email o contraseña incorrectos");
-      } else {
-        setError("Error de conexión con el servidor");
-      }
-    }
-  };
+  // Estado para mostrar/ocultar la contraseña
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="login-page">
@@ -62,15 +22,11 @@ const Login: React.FC = () => {
             <div className="form-card__header">
               <h2>Welcome Back</h2>
               <p className="form-card__subtitle">
+                Please enter your details below to continue.
               </p>
             </div>
 
-            {/* 6. Conecta el formulario a la función handleSubmit */}
-            <form className="form-card__form" onSubmit={handleSubmit}>
-              
-              {/* 7. Muestra el error si existe */}
-              {error && <p className="form-error">{error}</p>}
-
+            <form className="form-card__form" onSubmit={handleLogin}>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
@@ -78,7 +34,6 @@ const Login: React.FC = () => {
                   className="form-input"
                   placeholder="you@example.com"
                   type="email"
-                  // 8. Conecta los inputs a los estados
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -88,22 +43,25 @@ const Login: React.FC = () => {
               <div className="form-group">
                 <div className="form-group__header">
                   <label htmlFor="password">Password</label>
-                  <a href="#">Forgot Password?</a>
+                  <a href="#" className="forgot-link">Forgot Password?</a>
                 </div>
                 <div className="input-wrapper">
                   <input
                     id="password"
                     className="form-input"
                     placeholder="Enter your password"
-                    type="password"
-                    // 8. Conecta los inputs a los estados
+                    type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                  <span className="password-icon">
-                    <LuEye size={20} />
-                  </span>
+                  <button
+                    type="button"
+                    className="password-icon"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <LuEyeOff size={20} /> : <LuEye size={20} />}
+                  </button>
                 </div>
               </div>
 
@@ -114,7 +72,6 @@ const Login: React.FC = () => {
 
             <p className="helper-link">
               Don't have an account?{" "}
-              {/* 9. Asegúrate de que este link apunte a /register */}
               <a href="/register">Sign Up</a>
             </p>
           </div>
