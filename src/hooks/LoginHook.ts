@@ -8,10 +8,8 @@ export function LoginHook() {
         e.preventDefault();
 
         if (!email || !password) {
-            alert("Plese complete all fields");
-            setEmail("");
-            setPassword("");
-            return;
+            alert("Please complete all fields");
+            return false;
         }
 
         try {
@@ -25,14 +23,16 @@ export function LoginHook() {
 
             if (!response.ok) {
                 alert(userData.message || "Invalid credentials");
-                return;
+                return false;
             }
-            localStorage.setItem("user", JSON.stringify(userData))
-            alert("Login succesful!");
+
+            localStorage.setItem("user", JSON.stringify(userData));
+            alert("Login successful!");
             return true;
         } catch (error) {
-            console.log(error);
-            alert(":(");
+            console.error(error);
+            alert("An error occurred during login");
+            return false;
         }
     };
 

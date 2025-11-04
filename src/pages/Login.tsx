@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 import { LuCamera, LuEye, LuEyeOff } from "react-icons/lu";
 import { LoginHook } from "../hooks/LoginHook";
@@ -81,7 +81,7 @@ const Login: React.FC = () => {
 
             <p className="helper-link">
               Don't have an account?{" "}
-              <a href="/register">Sign Up</a>
+              <Link to="/register">Sign Up</Link>
             </p>
           </div>
         </div>
