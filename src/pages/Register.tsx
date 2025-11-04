@@ -1,9 +1,7 @@
 import React from "react";
-import "./Register.css"; // Importamos nuestro nuevo archivo CSS
+import "./Register.css"; 
 
-// Importamos el ícono de visibilidad. 
-// Necesitarás instalar 'react-icons' si no lo has hecho:
-// npm install react-icons
+
 import { LuEye } from "react-icons/lu";
 
 const Register: React.FC = () => {

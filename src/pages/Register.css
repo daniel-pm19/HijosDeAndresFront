@@ -9,13 +9,11 @@
   --color-input-dark: #111822;
   --color-border-dark: #324867;
   --color-text-light: #ffffff;
-  --color-text-medium: #92a9c9; /* Para placeholders y texto secundario */
-  --color-text-dark: #101822; /* Para modo claro (si se implementa) */
+  --color-text-medium: #92a9c9; 
+  --color-text-dark: #101822; 
 }
 
-/* Reseteo básico y configuración de la fuente global.
-  Elimina el 'display: flex' de tu index.css si aún está ahí.
-*/
+
 body {
   margin: 0;
   padding: 0;
@@ -25,7 +23,7 @@ body {
   min-height: 100vh;
 }
 
-/* --- 2. Estructura de la Página --- */
+
 .register-page {
   display: flex;
   flex-direction: column;
@@ -33,15 +31,15 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 2rem 1rem;
-  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+  box-sizing: border-box; 
 }
 
 .register-container {
   width: 100%;
-  max-width: 448px; /* Equivalente a max-w-md */
+  max-width: 448px; 
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Espacio entre el logo, la tarjeta y el footer */
+  gap: 2rem; 
 }
 
 .register-header {
@@ -49,25 +47,25 @@ body {
 }
 
 .register-header h1 {
-  font-size: 2rem; /* 32px */
+  font-size: 2rem; 
   font-weight: 800;
   color: var(--color-text-light);
   margin: 0;
 }
 
-/* --- 3. Tarjeta del Formulario --- */
+
 .form-card {
   background-color: var(--color-card-dark);
   border: 1px solid var(--color-border-dark);
-  border-radius: 0.75rem; /* 12px */
-  padding: 2rem; /* 32px */
+  border-radius: 0.75rem;
+  padding: 2rem; 
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 .form-card__content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* 24px - Espacio entre elementos dentro de la tarjeta */
+  gap: 1.5rem; 
 }
 
 .form-card__header {
@@ -75,7 +73,7 @@ body {
 }
 
 .form-card__header h2 {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem; 
   font-weight: 700;
   color: var(--color-text-light);
   margin: 0;
@@ -85,7 +83,7 @@ body {
 .form-card__form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* 20px */
+  gap: 1.25rem; 
 }
 
 .form-group {
@@ -100,12 +98,12 @@ body {
   color: var(--color-text-light);
 }
 
-/* --- 5. Inputs y Botones --- */
+
 .form-input {
   width: 100%;
   height: 3.5rem; /* 56px */
   padding: 0 0.875rem; /* 14px */
-  box-sizing: border-box; /* Asegura que el padding no afecte el width/height */
+  box-sizing: border-box; 
   
   background-color: var(--color-input-dark);
   border: 1px solid var(--color-border-dark);
