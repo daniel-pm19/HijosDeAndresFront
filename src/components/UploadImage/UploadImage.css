@@ -1,0 +1,111 @@
+.uploadImage-container {
+    /* Clases para centrar el contenido dentro del espacio que ocupa (gracias a flex-1) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 1.5rem; /* Espacio entre los elementos */
+    padding: 2rem; /* Padding general */
+    text-align: center;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    /* La altura se maneja con la clase 'flex-1' en el JSX */
+}
+
+/* Estilo para la caja de arrastrar y soltar */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    border: 3px dashed #7b7b7b;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: #444;
+    user-select: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Estilo para la caja al arrastrar sobre ella */
+.upload-box.active, 
+.upload-box:hover {
+    border-color: #136dec;
+    background-color: #e6f0ff;
+    box-shadow: 0 0 0 4px rgba(19, 109, 236, 0.2);
+}
+
+/* Estilos de la etiqueta y el contenido */
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+.upload-label strong {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.upload-label p {
+    margin-bottom: 1rem;
+    color: #7b7b7b;
+}
+
+.upload-label span {
+    font-weight: 600;
+    color: #136dec;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #136dec;
+    border-radius: 6px;
+    background-color: #fff;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.select-btn {
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #5d98f7;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.select-btn:hover {
+    background-color: #136dec;
+}
+
+/* Botón principal de "Subir" */
+.upload-btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #136dec;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.upload-btn:hover {
+    background-color: #0d4a99;
+}
+
+.upload-btn:active {
+    transform: scale(0.98);
+}
